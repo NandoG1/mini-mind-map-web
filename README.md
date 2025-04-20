@@ -11,7 +11,6 @@ A minimalist yet powerful mind mapping web application built with React. Create,
 - **Checklist Mode**: Convert any node into a checklist item that can be checked off
 - **Beautiful Connections**: Curved bezier connections between nodes with animated dashed lines
 - **Zoom & Pan**: Navigate your mind map with intuitive zoom and pan controls
-- **LocalStorage Persistence**: Automatically saves your mind map in the browser
 - **Export to Image**: Download your mind map as a PNG image
 
 ### ⭐ New Features
