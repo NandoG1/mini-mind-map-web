@@ -1,0 +1,34 @@
+.connection-path {
+	stroke-dasharray: 5, 5;
+	animation: dash 30s linear infinite;
+	pointer-events: none;
+}
+
+.connection-line-base {
+	pointer-events: none;
+}
+
+.connection-arrow {
+	pointer-events: none;
+}
+
+.connection-line-temp {
+	pointer-events: none;
+	stroke-width: 2;
+	animation: dash 15s linear infinite;
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: 1000;
+	}
+}
+
+.connections-layer:hover .connection-path {
+	stroke-width: 3;
+}
+
+.connection-path.active {
+	stroke-width: 3;
+	stroke-dasharray: none;
+}

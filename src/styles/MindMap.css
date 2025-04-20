@@ -1,0 +1,425 @@
+.mind-map-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #f8f9fa;
+}
+
+.toolbar {
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+	flex-wrap: wrap;
+}
+
+.toolbar button {
+	margin-right: 10px;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 4px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.add-node-btn {
+	background-color: #4263eb;
+	color: white;
+}
+
+.add-node-btn:hover {
+	background-color: #3b5bdb;
+}
+
+.add-task-btn {
+	background-color: #7950f2;
+	color: white;
+}
+
+.add-task-btn:hover {
+	background-color: #6741d9;
+}
+
+.node-color-options {
+	display: flex;
+	align-items: center;
+	margin-right: 15px;
+}
+
+.color-node-btn {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	margin-right: 5px;
+	padding: 0;
+	border: 2px solid transparent;
+	transition: transform 0.2s ease;
+}
+
+.color-node-btn:hover {
+	transform: scale(1.2);
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+.color-node-btn.green {
+	background-color: #12b886;
+}
+
+.color-node-btn.blue {
+	background-color: #4263eb;
+}
+
+.color-node-btn.yellow {
+	background-color: #fab005;
+}
+
+.drawing-tools {
+	display: flex;
+	align-items: center;
+	margin-right: 15px;
+}
+
+.drawing-mode-btn {
+	background-color: #495057;
+	color: white;
+	position: relative;
+}
+
+.drawing-mode-btn:hover {
+	background-color: #343a40;
+}
+
+.drawing-mode-btn.active {
+	background-color: #e03131;
+}
+
+.drawing-mode-btn.active:hover {
+	background-color: #c92a2a;
+}
+
+.drawing-color-picker {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin: 0 5px;
+}
+
+.drawing-width-selector {
+	height: 30px;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	padding: 0 5px;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.clear-drawings-btn {
+	background-color: #f8f9fa;
+	color: #495057;
+	border: 1px solid #ced4da;
+	font-size: 12px;
+	padding: 5px 10px;
+}
+
+.clear-drawings-btn:hover {
+	background-color: #e9ecef;
+}
+
+.export-btn {
+	background-color: #12b886;
+	color: white;
+}
+
+.export-btn:hover {
+	background-color: #0ca678;
+}
+
+.zoom-controls {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+
+.zoom-controls button {
+	background-color: #e9ecef;
+	color: #495057;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	font-size: 16px;
+	margin: 0 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.zoom-controls button:hover {
+	background-color: #dee2e6;
+}
+
+.zoom-controls span {
+	margin: 0 5px;
+	font-size: 14px;
+	color: #495057;
+}
+
+.status-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 20px;
+	background-color: #343a40;
+	color: white;
+	font-size: 14px;
+	border-top: 1px solid #212529;
+	border-bottom: 1px solid #212529;
+}
+
+.xp-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.level-badge {
+	background-color: #4263eb;
+	padding: 3px 8px;
+	border-radius: 12px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.xp-bar {
+	width: 150px;
+	height: 8px;
+	background-color: #495057;
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+}
+
+.xp-progress {
+	height: 100%;
+	background: linear-gradient(90deg, #4263eb, #12b886);
+	border-radius: 4px;
+	transition: width 0.3s ease;
+}
+
+.xp-text {
+	font-size: 12px;
+	color: #adb5bd;
+}
+
+.achievements-container {
+	display: flex;
+	gap: 5px;
+}
+
+.achievement-badge {
+	font-size: 18px;
+	cursor: help;
+}
+
+/* XP gain notification */
+.xp-notification {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background-color: #4263eb;
+	color: white;
+	padding: 10px 15px;
+	border-radius: 4px;
+	font-weight: bold;
+	animation: fadeInOut 2s ease;
+	z-index: 1000;
+}
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	20% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	80% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+}
+
+.canvas-wrapper {
+	flex: 1;
+	position: relative;
+	overflow: hidden;
+}
+
+.canvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-origin: center center;
+	cursor: grab;
+	background-image: radial-gradient(#e9ecef 1px, transparent 1px);
+	background-size: 20px 20px;
+}
+
+.canvas:active {
+	cursor: grabbing;
+}
+
+.canvas.drawing-mode {
+	cursor: crosshair;
+}
+
+.connections-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+/* Drawing paths */
+.drawing-path {
+	pointer-events: none;
+}
+
+.drawing-path.current {
+	animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+	from {
+		stroke-opacity: 0.7;
+	}
+	to {
+		stroke-opacity: 1;
+	}
+}
+
+/* Notifications */
+.notification-container {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 300px;
+}
+
+.notification {
+	padding: 12px 16px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	color: white;
+	animation: notification-slide-in 0.3s ease-out, notification-fade-out 0.3s ease-in forwards;
+	animation-delay: 0s, 2.7s;
+}
+
+.notification.info {
+	background-color: #4263eb;
+}
+
+.notification.success {
+	background-color: #12b886;
+}
+
+.notification.error {
+	background-color: #fa5252;
+}
+
+.notification.achievement {
+	background-color: #fab005;
+	color: #212529;
+}
+
+@keyframes notification-slide-in {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes notification-fade-out {
+	from {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+/* Confirmation Dialog */
+.confirm-dialog-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.confirm-dialog {
+	background: white;
+	border-radius: 8px;
+	padding: 20px;
+	width: 300px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-dialog p {
+	margin: 0 0 20px 0;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #343a40;
+}
+
+.confirm-dialog-buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.confirm-dialog-buttons button {
+	padding: 8px 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+}
+
+.confirm-yes {
+	background-color: #fa5252;
+	color: white;
+}
+
+.confirm-no {
+	background-color: #e9ecef;
+	color: #495057;
+}

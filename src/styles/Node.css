@@ -1,0 +1,170 @@
+.node {
+	position: absolute;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 0;
+	cursor: move;
+	overflow: hidden;
+	transition: box-shadow 0.2s ease, border-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+	border: 2px solid #dee2e6;
+	display: flex;
+	flex-direction: column;
+	z-index: 10;
+	user-select: none;
+	min-width: 150px;
+	min-height: 100px;
+	max-width: 500px;
+}
+
+.node.hovered {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	z-index: 20;
+}
+
+.node.connecting {
+	border-color: #4263eb;
+	box-shadow: 0 0 0 2px rgba(66, 99, 235, 0.2);
+	z-index: 20;
+}
+
+.node.checked {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.node-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: #f8f9fa;
+	border-bottom: 1px solid #dee2e6;
+	width: 100%;
+}
+
+.node-title-container {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	min-width: 0;
+}
+
+.node-checkbox {
+	margin-right: 8px;
+	flex-shrink: 0;
+}
+
+.node-checkbox input {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.node-title {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #343a40;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+	white-space: normal;
+	display: inline-block;
+	max-width: 100%;
+}
+
+.node-actions {
+	display: flex;
+	align-items: center;
+	margin-left: 8px;
+	flex-shrink: 0;
+}
+
+.connection-point {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background-color: #e9ecef;
+	border: none;
+	margin-right: 5px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	color: #495057;
+	transition: all 0.2s ease;
+	flex-shrink: 0;
+}
+
+.connection-point:hover {
+	background-color: #4263eb;
+	color: white;
+	transform: scale(1.1);
+}
+
+.connection-point.connecting-from {
+	background-color: #4263eb;
+	color: white;
+	animation: pulse 1s infinite alternate;
+}
+
+.connection-point.connecting-to {
+	background-color: #12b886;
+	color: white;
+	transform: scale(1.1);
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.2);
+	}
+}
+
+.edit-button {
+	background: none;
+	border: none;
+	font-size: 14px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #6c757d;
+	flex-shrink: 0;
+}
+
+.edit-button:hover {
+	color: #495057;
+}
+
+.node-content {
+	padding: 10px;
+	font-size: 13px;
+	color: #495057;
+	overflow-y: auto;
+	flex: 1;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+/* Styles for connection endpoints */
+.connection-endpoint {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background-color: #4263eb;
+	border-radius: 50%;
+	border: 2px solid white;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	display: none;
+}
+
+.node:hover .connection-endpoint {
+	display: block;
+}

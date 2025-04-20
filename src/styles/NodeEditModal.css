@@ -1,0 +1,184 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+}
+
+.modal-content {
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	max-width: 500px;
+	padding: 20px;
+}
+
+.modal-content h2 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: #343a40;
+	font-size: 18px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 500;
+	color: #495057;
+	font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+	width: 100%;
+	padding: 8px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #212529;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	outline: none;
+	border-color: #4263eb;
+	box-shadow: 0 0 0 3px rgba(66, 99, 235, 0.1);
+}
+
+/* Color picker styles */
+.color-picker {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 5px;
+}
+
+.color-option {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+	border: 2px solid #dee2e6;
+	transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-option:hover {
+	transform: scale(1.1);
+}
+
+.color-option.selected {
+	border-color: #212529;
+	transform: scale(1.1);
+}
+
+.custom-color-input {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.custom-color-input input[type="color"] {
+	-webkit-appearance: none;
+	width: 30px;
+	height: 30px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	padding: 0;
+	background: none;
+}
+
+.custom-color-input input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+	border-radius: 50%;
+}
+
+.custom-color-input input[type="color"]::-webkit-color-swatch {
+	border: 2px solid #dee2e6;
+	border-radius: 50%;
+}
+
+/* Checkbox group styles */
+.checkbox-group {
+	margin-top: 20px;
+}
+
+.checkbox-container,
+.status-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+}
+
+.checkbox-container input[type="checkbox"],
+.status-container input[type="checkbox"] {
+	width: auto;
+	margin-right: 8px;
+}
+
+.checkbox-container label,
+.status-container label {
+	display: inline;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.status-container {
+	margin-left: 20px;
+	margin-top: 8px;
+}
+
+.modal-actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.modal-actions button {
+	padding: 8px 16px;
+	border: none;
+	border-radius: 4px;
+	font-weight: 500;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.save-btn {
+	background-color: #4263eb;
+	color: white;
+	margin-left: 10px;
+}
+
+.save-btn:hover {
+	background-color: #3b5bdb;
+}
+
+.cancel-btn {
+	background-color: #e9ecef;
+	color: #495057;
+}
+
+.cancel-btn:hover {
+	background-color: #dee2e6;
+}
+
+.delete-btn {
+	background-color: #fa5252;
+	color: white;
+}
+
+.delete-btn:hover {
+	background-color: #e03131;
+}
